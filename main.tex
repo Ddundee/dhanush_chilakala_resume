@@ -1,0 +1,216 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Dhanush Chilakala} \\ \vspace{1pt}
+    \small 469-740-0661 $|$ \href{mailto:dhanushc@vt.edu}{\underline{dhanushc@vt.edu}} $|$ 
+    \href{https://linkedin.com/in/dhanush-chilakala}{\underline{linkedin.com/in/dhanush-chilakala}} $|$
+    \href{https://github.com/Ddundee}{\underline{github.com/Ddundee}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Virginia Tech}{Blacksburg, VA}
+      {Bachelor of Science in Computer Science and Computational Modeling \& Data Analytics}{Aug. 2024 -- May 2027}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {HackViolet}{February 2025}
+      {HackViolet}{Blacksburg, VA}
+      \resumeItemListStart
+        \resumeItem{Developed a Next.js and MongoDB application that streamlines travel list management, enabling users to optimize itineraries and coordinate group trips using a responsive, intuitive interface}
+        \resumeItem{Competed against 200+ participants at the hackathon, working closely with 3 other teammates to contribute to both frontend and backend development, ensuring smooth integration and functionality across the app’s features}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {VTHacks}{September 2024}
+      {VTHacks}{Blacksburg, VA}
+      \resumeItemListStart
+        \resumeItem{Built a Next.js and MongoDB based app that uses university food APIs to create a filterable system, allowing users to sort meals by time of day, proteins, calories, fats, and carbs for personalized nutrition access}
+        \resumeItem{Competed against 600+ participants at VT Hacks, working closely with 3 teammates to contribute to both frontend and backend development, ensuring smooth integration and functionality across the app’s features}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {HackTheChains}{April 2024}
+      {SMU Blockchain Club}{Dallas, TX}
+      \resumeItemListStart
+        \resumeItem{Won 1st place in the Arbitrum track at SMU's HackTheChains Hackathon, competing against 100+ participants, by collaborating with a programmer and 2 business analysts to develop BountyBlock, a platform that connects skilled 3rd world developers with tech companies}
+        \resumeItem{Developed BountyBlock's smart contract using Solidity to enable secure, transparent, and easily convertible transactions between companies and freelancers, utilizing stablecoins such as USDC}
+        \resumeItem{Designed \& implemented BountyBlock's user-friendly UI/UX using Figma, Next.js, and TailwindCSS, ensuring an intuitive and engaging user experience}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {AIFAHacks - AI Hackathon for Social Good}{September 2023}
+      {AI For All Club}{Richardson, TX}
+      \resumeItemListStart
+        \resumeItem{Won 1st place overall at the AIFAHacks AI Hackathon for Social Good, competing against 200+ participants, by collaborating with 2 programmers to develop a website using Next.js that provides personalized advice on reducing users' carbon footprints based on their responses to a questionnaire}
+        \resumeItem{Developed a Python API that leverages a Python Wrapper to connect the frontend with Google BARD, enabling seamless integration between the front end and the advanced LLM}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Wordle Solver} $|$ \emph{Javascript}}{April 2024}
+          \resumeItemListStart
+            \resumeItem{Developed a comprehensive 5-letter word dataset by utilizing a Wikipedia dump to sort words by letter commonality resulting in an accurate and efficient analysis for Wordle}
+            \resumeItem{Identified the optimal starting word for Wordle by analyzing letter frequency data leading to improved initial guesses and gameplay strategy}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{WDLM Discord Bot} $|$ \emph{Javascript, Discord.js, Next.js}}{January 2024}
+          \resumeItemListStart
+            \resumeItem{Achieved efficient and cost-effective file storage by creating a Next.js application that splits and uploads files to Discord in 25MB parts resulting in the elimination of the need for additional physical storage hardware}
+            \resumeItem{Implemented a file download feature by reassembling split files and enabling user downloads through the app leading to seamless access to stored files}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, HTML/CSS, Java, JavaScript} \\
+     \textbf{Frameworks \& Libraries}{: Astro, Better-Auth, Clerk, Firebase, Material-UI, Next.js, React, Sockets.io, Vite} \\
+     \textbf{Databases}{: MongoDB} \\
+     \textbf{Developer Tools}{: Docker, Eclipse, Git, Google Cloud Platform (GCP), IntelliJ, Neovim, npm, VS Code} 
+    }}
+\end{itemize}
+
+
+
+
+%-------------------------------------------
+\end{document}

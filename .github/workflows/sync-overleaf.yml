@@ -1,0 +1,19 @@
+name: Sync Overleaf Resume
+
+on:
+  schedule:
+    - cron: "0 * * * *" # runs every hour
+  workflow_dispatch: # allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install TeX
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
+      - name: Build PDF
+        run: |
+          latexmk -pdf -quiet resume.tex
+

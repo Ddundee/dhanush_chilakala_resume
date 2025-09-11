@@ -24,8 +24,8 @@ jobs:
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: resume-pdf
-          path: resume.pdf
+          name: dhanush-chilakala-resume-pdf
+          path: dhanush_chilakala_resume.pdf
           
       # Optional: If you want to commit the PDF back to the repo
       - name: Commit PDF

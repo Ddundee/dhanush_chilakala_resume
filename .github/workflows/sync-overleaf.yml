@@ -1,37 +1,67 @@
-name: Sync Overleaf Resume
+name: Build and Release Resume
 on:
   push:
-    branches: [ main, master ] # runs on commits to main/master
-    paths: [ '**.tex' ] # optional: only run if .tex files changed
-  schedule:
-    - cron: "0 * * * *" # runs every hour
-  workflow_dispatch: # allow manual trigger
+    branches: [ main, master ]
+    paths: [ '**.tex' ]
+
+permissions:
+  contents: write  # Required to create releases
 
 jobs:
-  sync:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Install TeX
-        run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra latexmk
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra latexmk
         
       - name: Build PDF
         run: |
           latexmk -pdf -quiet resume.tex
+          # Ensure consistent naming for the output
+          cp resume.pdf dhanush_chilakala_resume.pdf
           
-      - name: Upload PDF artifact
+      - name: Upload PDF artifact (for download in Actions)
         uses: actions/upload-artifact@v4
         with:
-          name: dhanush-chilakala-resume-pdf
+          name: resume-pdf
           path: dhanush_chilakala_resume.pdf
           
-      # Optional: If you want to commit the PDF back to the repo
-      - name: Commit PDF
+      - name: Delete existing latest release
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add resume.pdf
-          git diff --staged --quiet || git commit -m "Update resume PDF"
-          git push
+          # Delete the release and tag if they exist
+          gh release delete latest --yes || true
+          git push --delete origin latest || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create new latest release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "Latest Resume - $(date +'%Y-%m-%d %H:%M UTC')"
+          body: |
+            ## �� Dhanush Chilakala - Resume
+            
+            **Auto-generated on:** $(date +'%Y-%m-%d at %H:%M UTC')
+            **Commit:** ${{ github.sha }}
+            
+            ### �� Direct PDF Link:
+            ```
+            https://github.com/${{ github.repository }}/releases/download/latest/dhanush_chilakala_resume.pdf
+            ```
+            
+            ### �� Changes in this build:
+            - LaTeX source updated
+            - PDF automatically compiled and released
+            
+            ---
+            *This release is automatically updated whenever the resume LaTeX files are modified.*
+          files: dhanush_chilakala_resume.pdf
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

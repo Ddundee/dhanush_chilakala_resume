@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting to Resume…</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 48px 16px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      a {
+        word-break: break-all;
+      }
+    </style>
+    <!-- Optional: meta refresh as a fallback -->
+    <meta http-equiv="refresh" content="2;url=https://resume.dhanushc.com/dhanush_chilakala_resume.pdf" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Redirecting…</h1>
+      <p>
+        If you are not redirected automatically, click the link below:
+      </p>
+      <p>
+        <a href="https://resume.dhanushc.com/dhanush_chilakala_resume.pdf">
+          https://resume.dhanushc.com/dhanush_chilakala_resume.pdf
+        </a>
+      </p>
+    </div>
+
+    <script>
+      (function () {
+        const url = "https://resume.dhanushc.com/dhanush_chilakala_resume.pdf";
+
+        // Redirect once the page loads
+        window.addEventListener("load", () => {
+          // Use replace() so the redirect page doesn't stay in browser history
+          window.location.replace(url);
+        });
+      })();
+    </script>
+  </body>
+</html>

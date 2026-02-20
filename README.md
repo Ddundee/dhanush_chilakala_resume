@@ -1,1 +1,1 @@
-check out [https://resume.dhanushc.com/dhanush_chilakala_resume.pdf](resume)
+check out [resume](https://resume.dhanushc.com/dhanush_chilakala_resume.pdf)
